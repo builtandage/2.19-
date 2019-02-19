@@ -12,23 +12,51 @@
 <body>
     <div class="wrap">
         <header>
-            <span>未使用</span>
+            <span class="active">未使用</span>
             <span>已使用</span>
             <span>已过期</span>
         </header>
+        <section>
+            <div class="active">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
     </div>
 
 </body>
 <script>
     const spans = [...document.querySelectorAll('header span')];
-    spans.map((item) => {
+    const divs = [...document.querySelectorAll('section>div')];
+    spans.map((item, index) => {
         item.onclick = () => {
+            action(index);
             spans.map((i) => {
                 i.classList.remove('active');
             })
             item.classList.add('active');
         }
     })
+    let action = (index) => {
+        divs.map((it) => {
+            it.classList.remove('active')
+        })
+        divs[index].classList.add('active')
+    }
 </script>
 
 </html>

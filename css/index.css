@@ -13,6 +13,8 @@ html {
 .wrap {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -34,4 +36,41 @@ header span {
 
 header span.active {
     border-bottom: 3px blue solid;
+}
+
+section {
+    flex: 1;
+    width: 100%;
+    display: flex;
+}
+
+section>div {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+section>div.active {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section>div>div {
+    width: 80%;
+    height: 100px;
+}
+
+section>div:first-child>div {
+    background: red;
+}
+
+section>div:nth-child(2)>div {
+    background: blue;
+}
+
+section>div:nth-child(3)>div {
+    background: pink;
 }
